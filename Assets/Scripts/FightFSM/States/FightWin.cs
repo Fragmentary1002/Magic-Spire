@@ -11,7 +11,7 @@ namespace FightFSM.States
 
         protected override bool OnCondition()
         {
-            return mFSM.CurrentStateId == FightState.Player;
+            return mFSM.CurrentStateId == FightState.BattleInit;
         }
 
         protected override void OnEnter()
