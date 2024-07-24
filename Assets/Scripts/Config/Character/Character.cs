@@ -4,12 +4,6 @@ using UnityEngine;
 
 namespace Config.Character
 {
-    // 角色职业枚举
-    public enum CharacterClass
-    {
-        ironChad,
-        silent
-    }   
 
     /// <summary>
     /// 角色类，继承自ScriptableObject，用于创建角色资源

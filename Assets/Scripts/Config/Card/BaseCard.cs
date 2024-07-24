@@ -1,35 +1,8 @@
-using Config.Buff.BaseBuff;
+using Config.Buff;
 using UnityEngine;
 
 namespace Config.Card
 {
-
-
-    #region 枚举类
-
-    public enum CardClass
-    {
-        IronChad,       //战
-        Silent,         //猎
-        Colorless,      //无色
-        Curse,          //诅咒
-        Status          //状态
-    }
-
-    public enum CardType
-    {
-        Attack,     //攻击
-        Skill,      //技能
-        Power       //能力
-    }
-
-    public enum CardTargetType
-    {
-        Self,
-        Enemy
-    };
-
-    #endregion
 
     [CreateAssetMenu(fileName = "Card", menuName = "ScriptableObject/Card")]
     public class BaseCard : ScriptableObject
@@ -100,8 +73,8 @@ namespace Config.Card
 
         // 卡牌类别
         [SerializeField]
-        private CardClass cardColor;
-        public CardClass CardColor
+        private CardColor cardColor;
+        public CardColor CardColor
         {
             get { return cardColor; }
         }

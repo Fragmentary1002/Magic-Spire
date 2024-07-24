@@ -4,17 +4,16 @@ using QFramework;
 
 namespace QUtility
 { 
-    public class ListExtensions : IUtility
+    public static class ListExtensions
     {
-
-        public void Shuffle<T>(IList<T> list)
+        public static void Shuffle<T>(this IList<T> list)
         {
             Random rnd = new Random();
             for (var i = 0; i < list.Count; i++)
-               Swap(list,i, rnd.Next(i, list.Count));
+                list.Swap(i, rnd.Next(i, list.Count));
         }
 
-        public void Swap<T>(IList<T> list, int i, int j)
+        public static void Swap<T>(this IList<T> list, int i, int j)
         {
             var temp = list[i];
             list[i] = list[j];

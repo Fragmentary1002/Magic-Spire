@@ -30,7 +30,7 @@ namespace FightFSM
             _fsm.OnGUI();
         }
 
-        private void OnDestroy()
+        protected override void OnDestroy()
         {
             _fsm.Clear();
         }

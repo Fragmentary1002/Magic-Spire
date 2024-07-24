@@ -1,22 +1,9 @@
-using Config.Buff.BaseBuff;
+using Config.Buff;
 using UnityEngine;
 
 namespace Config.Monster
 {
-
-    public enum EnemyActionType
-    {
-        // ¹¥»÷ÒâÍ¼  
-        Attack,
-        // ×èµ²ÒâÍ¼  
-        Block,
-        Buff,
-        doubleHit
-
-    }
-    /// <summary>
-    ///
-    /// </summary>
+    
     [CreateAssetMenu(fileName = "EnemyAction", menuName = "ScriptableObject/EnemyAction")]
     public class EnemyAction : ScriptableObject
     {

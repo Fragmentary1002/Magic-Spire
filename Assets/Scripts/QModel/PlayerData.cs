@@ -9,17 +9,17 @@ namespace QModel
     // 需要存储的数据
     public class PlayerData: AbstractModel
     {
-        private string playerName;           // 玩家名称
+        public string playerName;           // 玩家名称
 
-        private int maxHp;
+        public int maxHp;
 
-        private int curHp;
+        public int curHp;
 
-        private int maxEnegry;
+        public int maxEnegry;
 
-        private int gold;                    // 金币数量
+        public int gold;                    // 金币数量
 
-        private int curFloor;            // 当前所在楼层
+        public int curFloor;            // 当前所在楼层
         
         private List<BaseCard> cards = new List<BaseCard>();         // 玩家持有的卡牌列表
         

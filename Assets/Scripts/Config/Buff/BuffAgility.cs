@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Config.Buff
 {
     [CreateAssetMenu(fileName = "BuffAgility", menuName = "ScriptableObject/BaseBuff/BuffAgility ")]
-    public class BuffAgility : BaseBuff.BaseBuff
+    public class BuffAgility : BaseBuff
     {
         public override void AfterBeAdded()
         {

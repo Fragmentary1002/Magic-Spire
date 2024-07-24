@@ -1,14 +1,10 @@
 using QFramework;
 using UnityEngine;
+using Config;
 
 namespace QUtility
 {
-    public enum LogLevel
-    {
-        Info,
-        Warning,
-        Error
-    }
+   
 
     public class LogTool:IUtility
 	{

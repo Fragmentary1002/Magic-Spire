@@ -7,8 +7,7 @@ namespace Config.Monster {
     {
         public string monsterId;
 
-        public MonsterClass monsterClass;   
-        public enum MonsterClass { enemy, eliteEnemy }   
+        public MonsterType monsterType;   
         
         public GameObject MonsterClassPrefab;      // 角色预制体对象
         
