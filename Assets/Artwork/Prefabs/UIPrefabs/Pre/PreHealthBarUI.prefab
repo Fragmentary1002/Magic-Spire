@@ -651,9 +651,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 734238565363360920}
-  - component: {fileID: -6910065419633970953}
-  - component: {fileID: 2676119799170301127}
-  - component: {fileID: 6711866635262289046}
+  - component: {fileID: 4566570261013267446}
   m_Layer: 5
   m_Name: PreHealthBarUI
   m_TagString: Untagged
@@ -685,7 +683,7 @@ RectTransform:
   m_AnchoredPosition: {x: -16.111511, y: -200.92}
   m_SizeDelta: {x: 279.777, y: 84.868}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &-6910065419633970953
+--- !u!114 &4566570261013267446
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -694,7 +692,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6196467656838920039}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22bef5df496564944b8deb4a1fa83657, type: 3}
+  m_Script: {fileID: 11500000, guid: c4346ecdc7af7d541ade7455bb011212, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   sliderHealth: {fileID: 5540652543690368307}
@@ -702,40 +700,6 @@ MonoBehaviour:
   tranBuffsParent: {fileID: 7456612366056687994}
   imgBlockIcon: {fileID: 8674429355979158375}
   txtBlock: {fileID: 6883509247798438623}
---- !u!114 &2676119799170301127
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6196467656838920039}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81936539ae2d84665a86a2b3f531955f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Namespace: QFramework.Example
-  ScriptName: PreHealthBarUI
-  ScriptsFolder: Assets/Scripts/ViewController
-  GeneratePrefab: 0
-  PrefabFolder: Assets/Art/Prefab
-  ArchitectureFullTypeName: 
-  ViewControllerFullTypeName: 
---- !u!114 &6711866635262289046
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6196467656838920039}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 411e729afed24c62a04e2b99d9122e78, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Binds:
-  - MemberName: SelfPreHealthBarUI
-    Object: {fileID: -6910065419633970953}
 --- !u!1 &6905876033522958301
 GameObject:
   m_ObjectHideFlags: 0

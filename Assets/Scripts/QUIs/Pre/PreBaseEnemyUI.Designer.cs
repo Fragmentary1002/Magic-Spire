@@ -5,7 +5,7 @@ using QFramework;
 
 namespace QUI
 {
-	// Generate Id:1217da0a-79a5-4ff1-9de0-a5253c9c1758
+	// Generate Id:404df0fd-763f-4f64-9884-b8adf1447867
 	public partial class PreBaseEnemyUI
 	{
 		public const string Name = "PreBaseEnemyUI";
@@ -28,31 +28,8 @@ namespace QUI
 		/// </summary>
 		[SerializeField]
 		public UnityEngine.UI.Image EnemyIcon;
-		/// <summary>
-		/// 生命条
-		/// </summary>
 		[SerializeField]
-		public UnityEngine.UI.Slider sliderHealth;
-		/// <summary>
-		/// 生命数字
-		/// </summary>
-		[SerializeField]
-		public TMPro.TextMeshProUGUI txtHealth;
-		/// <summary>
-		/// buff结点
-		/// </summary>
-		[SerializeField]
-		public RectTransform tranBuffsParent;
-		/// <summary>
-		/// 防御图标
-		/// </summary>
-		[SerializeField]
-		public UnityEngine.UI.Image imgBlockIcon;
-		/// <summary>
-		/// 防御数字
-		/// </summary>
-		[SerializeField]
-		public TMPro.TextMeshProUGUI txtBlock;
+		public PreHealthBarUI PreHealthBarUI;
 		
 		private PreBaseEnemyUIData mPrivateData = null;
 		
@@ -62,11 +39,7 @@ namespace QUI
 			IntentIcon = null;
 			IntentAmountText = null;
 			EnemyIcon = null;
-			sliderHealth = null;
-			txtHealth = null;
-			tranBuffsParent = null;
-			imgBlockIcon = null;
-			txtBlock = null;
+			PreHealthBarUI = null;
 			
 			mData = null;
 		}

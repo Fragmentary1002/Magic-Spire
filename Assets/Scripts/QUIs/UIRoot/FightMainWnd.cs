@@ -19,7 +19,7 @@ namespace QUI
 			playerData = this.GetModel<PlayerData>();
 		}
 		
-		// Ö¸¶¨¼Ü¹¹
+		// æŒ‡å®šæž¶æž„
 		public IArchitecture GetArchitecture()
 		{
 			return CounterApp.Interface;
@@ -52,6 +52,8 @@ namespace QUI
 		protected override void OnOpen(IUIData uiData = null)
 		{
 			LoadData(mData);
+        
+            
 		}
 		
 		protected override void OnShow()

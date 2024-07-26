@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6906579243204866595}
   - component: {fileID: 6906579243204866604}
   - component: {fileID: 5780476654734089485}
+  - component: {fileID: -4036259043887455088}
   m_Layer: 5
   m_Name: PreBasePlayerUI
   m_TagString: Untagged
@@ -146,6 +147,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-4036259043887455088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3966966964440119403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3cebfa76cc69a5419537632fb2f676d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imgPlayerIcon: {fileID: 0}
+  PreHealthBarUI: {fileID: 0}
 --- !u!1 &3966966964720921343
 GameObject:
   m_ObjectHideFlags: 0
@@ -344,14 +359,14 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 6196467656838920039, guid: 4dc04e635fb5cb5449531191b1889ce2, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 6822070133744080020}
+      addedObject: {fileID: 1171650169713645285}
   m_SourcePrefab: {fileID: 100100000, guid: 4dc04e635fb5cb5449531191b1889ce2, type: 3}
 --- !u!1 &4107713170580724611 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6196467656838920039, guid: 4dc04e635fb5cb5449531191b1889ce2, type: 3}
   m_PrefabInstance: {fileID: 7854209432769326308}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &6822070133744080020
+--- !u!114 &1171650169713645285
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -363,10 +378,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d51f3a7c41ab0346b49ae50d456bece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MarkType: 1
+  MarkType: 2
   CustomComponentName: PreHealthBarUI
   CustomComment: 
-  mComponentName: RectTransform
+  mComponentName: QUI.PreHealthBarUI
 --- !u!224 &7408223235946104956 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 734238565363360920, guid: 4dc04e635fb5cb5449531191b1889ce2, type: 3}

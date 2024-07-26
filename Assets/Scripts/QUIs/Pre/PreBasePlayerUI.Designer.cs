@@ -5,7 +5,7 @@ using QFramework;
 
 namespace QUI
 {
-	// Generate Id:3009c3e7-b4e8-44f6-b9fa-1a49d75440f5
+	// Generate Id:6b6b29a9-fe80-469d-b6d9-7b097368a4f3
 	public partial class PreBasePlayerUI
 	{
 		public const string Name = "PreBasePlayerUI";
