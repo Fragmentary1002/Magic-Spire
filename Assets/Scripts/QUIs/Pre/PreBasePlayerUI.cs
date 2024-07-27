@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using QFramework;
+using Config;
 
 namespace QUI
 {
@@ -13,6 +14,7 @@ namespace QUI
 		{
 			mData = uiData as PreBasePlayerUIData ?? new PreBasePlayerUIData();
 			// please add init code here
+			
 		}
 		
 		protected override void OnOpen(IUIData uiData = null)

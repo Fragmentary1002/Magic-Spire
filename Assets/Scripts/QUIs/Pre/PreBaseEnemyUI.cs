@@ -1,3 +1,4 @@
+using Config;
 using UnityEngine;
 using UnityEngine.UI;
 using QFramework;
@@ -16,7 +17,11 @@ namespace QUI
 		}
 		
 		protected override void OnOpen(IUIData uiData = null)
-		{
+		{	
+			RectTransform rectTransform = GetComponent<RectTransform>();
+			rectTransform.anchoredPosition = new Vector2(100, 100);
+			print(rectTransform.anchoredPosition);
+
 		}
 		
 		protected override void OnShow()

@@ -11,7 +11,6 @@ namespace QUI
 		public CardPileData cardPileData;
 		public FighterData fighterData;
 		public PlayerData playerData;
-
 		public FightMainWndData()
 		{
 			cardPileData = this.GetModel<CardPileData>();
@@ -52,8 +51,7 @@ namespace QUI
 		protected override void OnOpen(IUIData uiData = null)
 		{
 			LoadData(mData);
-        
-            
+		
 		}
 		
 		protected override void OnShow()
