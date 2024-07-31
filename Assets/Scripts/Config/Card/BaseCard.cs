@@ -1,4 +1,4 @@
-using Config.Buff;
+using NoSLoofah.BuffSystem;
 using UnityEngine;
 
 namespace Config.Card
@@ -168,8 +168,8 @@ namespace Config.Card
 
         //Ê©¼ÓµÄbuff
         [SerializeField]
-        private BaseBuff cardBuff;
-        public BaseBuff CardBuff
+        private Buff cardBuff;
+        public Buff CardBuff
         {
             get { return cardBuff; }
         }

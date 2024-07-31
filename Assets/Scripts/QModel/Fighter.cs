@@ -1,8 +1,9 @@
 ﻿using QFramework;
 using System.Collections;
 using System.Collections.Generic;
+using NoSLoofah.BuffSystem;
 using UnityEngine;
-using Config.Buff;
+
 using QUtility;
 
 namespace QModel
@@ -23,7 +24,7 @@ namespace QModel
         [Range(0, 999)]
         public int currentBlock = 0;
 
-        public List<BaseBuff> buffs = new List<BaseBuff>();
+        public List<Buff> buffs = new List<Buff>();
 
         
         #region 改数据
@@ -81,9 +82,9 @@ namespace QModel
             this.currentBlock += amount;
             LogTool.Log($"增加 {amount} 防御");
         }
-        public void DoAddBuff(BaseBuff newBuff, int buffAmount)
+        public void DoAddBuff(Buff newBuff, int buffAmount)
         {
-            newBuff.AfterBeAdded();
+            // newBuff.AfterBeAdded();
 
             buffs.Add(newBuff);
         }
