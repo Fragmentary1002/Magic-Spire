@@ -2,7 +2,7 @@
 using QModel;
 namespace QSystem
 {
-    public class PlayerManager:AbstractSystem
+    public class PlayerManager: AbstractSystem
     {
         private PlayerData _playerData;
         private FighterData _fighterData;

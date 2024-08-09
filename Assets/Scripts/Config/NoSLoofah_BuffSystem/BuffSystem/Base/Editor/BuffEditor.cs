@@ -297,14 +297,6 @@ namespace NoSLoofah.BuffSystem.Editor
             GUILayout.EndHorizontal();
             GUILayout.EndArea();
 
-
-
-
-
-
-
-
-
             if (selectedBuffindex < 0) return;
 
             //右侧

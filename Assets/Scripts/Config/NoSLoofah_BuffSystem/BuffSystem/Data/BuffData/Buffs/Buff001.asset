@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b0b9b580ee8d0a4ca0288b253f5ef27, type: 3}
   m_Name: Buff001
   m_EditorClassIdentifier: 
-  icon: {fileID: 21300000, guid: 8dc2567d029833247b19e732052abd1a, type: 3}
-  buffName: "\u6D41\u8840\u2161"
-  mutilAddType: 1
+  icon: {fileID: 0}
+  buffName: 
+  mutilAddType: 0
   removeOneLayerOnTimeUp: 0
-  buffTag: 1
+  buffTag: 0
   id: 1
   isPermanent: 0
-  duration: 15
-  bleedDamage: 3
-  bleedTimeInterval: 1
+  duration: 0
+  bleedDamage: 0
+  bleedTimeInterval: 0

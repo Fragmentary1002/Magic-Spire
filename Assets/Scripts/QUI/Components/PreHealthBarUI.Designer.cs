@@ -12,7 +12,6 @@ namespace QUI
 	{
 		[SerializeField] public UnityEngine.UI.Slider sliderHealth;
 		[SerializeField] public TMPro.TextMeshProUGUI txtHealth;
-		[SerializeField] public RectTransform tranBuffsParent;
 		[SerializeField] public UnityEngine.UI.Image imgBlockIcon;
 		[SerializeField] public TMPro.TextMeshProUGUI txtBlock;
 
@@ -20,7 +19,6 @@ namespace QUI
 		{
 			sliderHealth = null;
 			txtHealth = null;
-			tranBuffsParent = null;
 			imgBlockIcon = null;
 			txtBlock = null;
 		}

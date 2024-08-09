@@ -12,7 +12,7 @@ namespace QModel
     {
         
         //model
-        private List<BaseCard> deck = new List<BaseCard>();                         //卡组 
+        public List<BaseCard> deck = new List<BaseCard>();                         //卡组 
 
         private List<BaseCard> drawPile = new List<BaseCard>();                     // 抽卡堆  
 
@@ -26,12 +26,31 @@ namespace QModel
         
         protected override void OnInit(){}
 
+        #region 卡组初始化
+
+        public void OnInitDeck(List<BaseCard> cards)
+        {
+            if(cards==null) return;
+            this.deck = cards;
+        }
+        
+
+        #endregion
+        
         #region 手牌
         public void RemoveCurCardForCardsInHand(BaseCard card)
         {
             this.cardsInHand.Remove(card);
         }
 
+        public List<BaseCard> CardsInHand
+        {
+            get;
+        }
+        public int GetCardsInHandLength()
+        {
+            return cardsInHand.Count; 
+        }
         #endregion
         
         #region 抽牌堆

@@ -9,7 +9,7 @@ namespace Config.Monster {
 
         public MonsterType monsterType;   
         
-        public GameObject MonsterClassPrefab;      // 角色预制体对象
+        public Sprite MonsterIcon;      // 角色预制体对象
         
         public int startHealth;                 //初始最大生命值
     }

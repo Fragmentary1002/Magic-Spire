@@ -4,6 +4,7 @@ using QModel;
 using QUtility;
 using System.Collections.Generic;
 using Config;
+using UnityEngine.Events;
 
 namespace QSystem
 {
@@ -12,47 +13,52 @@ namespace QSystem
         private CardPileData _cardPileData;
         private FighterData _fighterData;
         
+        
         protected override void OnInit()
         {
             _cardPileData = this.GetModel<CardPileData>();
             _fighterData = this.GetModel<FighterData>();
         }
 
-        public bool PlayCardAndIsSuccess(BaseCard card)
+        public void PlayCard(BaseCard card,UnityAction callBack)
         {
 
             if (card == null)
             {
                 LogTool.Log("找不到Card数据");
-                return false;
+                return ;
             }
 
 
             if (_fighterData.GetPlayer().curEnergy < card.CardCost)
             {
                 LogTool.Log("你的能量不够");
-                return false;
+                return ;
             }
 
             // if (cardUI.card.cardType != CardTj.CardType.Attack && enemies[0].GetComponent<Fighter>().enrage.buffValue > 0)
             //   enemies[0].GetComponent<Fighter>().AddBuff(Buff.Type.strength, enemies[0].GetComponent<Fighter>().enrage.buffValue);
 
             try
-            {
+            {   
                 // 执行卡片的动作。  
                 PerformPlayerAction(card);
+                callBack?.Invoke();
                 _fighterData.GetPlayer().curEnergy -= card.CardCost;
+                StringEventSystem.Global.Send(EventID.EnergyUpdate);
                 // 从手牌列表中移除该卡片。
                 _cardPileData.RemoveCurCardForCardsInHand(card);
                 _cardPileData.AddDiscardPile(card);
+                StringEventSystem.Global.Send(EventID.CardsUpdate);
+                
             }
             catch
             {
-                return false;
+                return ;
             }
 
    
-            return true;
+            return ;
 
         }
 
@@ -78,7 +84,7 @@ namespace QSystem
                     break;
                 case CardType.Power:
                     //能力牌玩家加buff
-                    player.DoAddBuff(card.CardBuff, card.BuffAmount);
+                   
                     break;
             }
         }

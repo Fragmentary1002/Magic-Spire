@@ -11,6 +11,7 @@ public class CounterApp : Architecture<CounterApp>
         this.RegisterModel(new PlayerData());
         this.RegisterModel(new CardPileData());
         this.RegisterModel(new FighterData());
+        this.RegisterModel(new ConfigDicData());
         //System
         this.RegisterSystem(new FightCardManager());
         this.RegisterSystem(new PlayerManager());
@@ -18,6 +19,7 @@ public class CounterApp : Architecture<CounterApp>
 
         //Utility
         this.RegisterUtility(new LogTool());
+        this.RegisterUtility(new FanCardLayout());
     }
     // 指定架构
     public IArchitecture GetArchitecture()

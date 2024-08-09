@@ -10,11 +10,11 @@ namespace Config.Character
     /// </summary>
     /// 
     [CreateAssetMenu(fileName = "Character", menuName = "ScriptableObject/Character")]
-    public class Character : ScriptableObject
+    public class Character : ScriptableObject,ICharacter
     {
         public string characterId;
         public CharacterClass characterClass;   // 角色职业
-        public GameObject characterPrefab;      // 角色预制体对象
+        public Sprite characterIcon;      // 角色预制体对象
         public Sprite splashArt;                // 角色头像
         public List<BaseCard> startingDeck;         // 角色初始卡组
         public int startHealth;                 //初始最大生命值

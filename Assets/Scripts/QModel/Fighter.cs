@@ -1,6 +1,8 @@
 ﻿using QFramework;
 using System.Collections;
 using System.Collections.Generic;
+using Config.Character;
+using Config.Monster;
 using NoSLoofah.BuffSystem;
 using UnityEngine;
 
@@ -17,15 +19,33 @@ namespace QModel
         
         public int curHp;
         public int maxHp;
-        
+        public Sprite icon;
         public int curEnergy;
         public int maxEnergy;
         // 当前阻挡值，默认为0
         [Range(0, 999)]
         public int currentBlock = 0;
 
-        public List<Buff> buffs = new List<Buff>();
+        public Fighter()
+        {
+            
+        }
+        public Fighter(Character character)
+        {
+            fighterId = 0;
+            curHp = maxHp = character.startHealth;
+            curEnergy = maxEnergy = 3;
+            icon = character.characterIcon;
 
+        }
+
+        public Fighter(Monster monster)
+        {
+            fighterId = 1;
+            curHp = maxHp = monster.startHealth;
+            icon = monster.MonsterIcon;
+        }
+     
         
         #region 改数据
         public void ResetCurrentBlock()
@@ -82,25 +102,7 @@ namespace QModel
             this.currentBlock += amount;
             LogTool.Log($"增加 {amount} 防御");
         }
-        public void DoAddBuff(Buff newBuff, int buffAmount)
-        {
-            // newBuff.AfterBeAdded();
-
-            buffs.Add(newBuff);
-        }
-
-        /// <summary>
-        /// 回合结束时评估增益效果的方法
-        /// </summary>
-        public void EvaluateBuffsAtTurnEnd() { }
-
-        /// <summary>
-        /// 重置增益效果的方法
-        /// </summary>
-        public void DoResetBuffs()
-        {
-            this.buffs.Clear();
-        }
+      
         #endregion 
     }
     
