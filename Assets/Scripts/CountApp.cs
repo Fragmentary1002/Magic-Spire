@@ -16,6 +16,7 @@ public class CounterApp : Architecture<CounterApp>
         this.RegisterSystem(new FightCardManager());
         this.RegisterSystem(new PlayerManager());
         this.RegisterSystem(new EnemyManager());
+        this.RegisterSystem(new UIPoolManager());
 
         //Utility
         this.RegisterUtility(new LogTool());

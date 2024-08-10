@@ -10,13 +10,13 @@ using QUtility;
 
 namespace QModel
 {
-    
+
     // 战斗者类
     public class Fighter
     {
         // 0是玩家
         public int fighterId;
-        
+
         public int curHp;
         public int maxHp;
         public Sprite icon;
@@ -28,13 +28,13 @@ namespace QModel
 
         public Fighter()
         {
-            
+
         }
         public Fighter(Character character)
         {
             fighterId = 0;
             curHp = maxHp = character.startHealth;
-            curEnergy = maxEnergy = 3;
+            curEnergy = maxEnergy = 100;
             icon = character.characterIcon;
 
         }
@@ -45,8 +45,8 @@ namespace QModel
             curHp = maxHp = monster.startHealth;
             icon = monster.MonsterIcon;
         }
-     
-        
+
+
         #region 改数据
         public void ResetCurrentBlock()
         {
@@ -98,12 +98,12 @@ namespace QModel
         /// <param name="amount"></param>
         public void DoAddBlock(int amount)
         {
-        
+
             this.currentBlock += amount;
             LogTool.Log($"增加 {amount} 防御");
         }
-      
-        #endregion 
+
+        #endregion
     }
-    
+
 }

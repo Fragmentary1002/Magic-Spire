@@ -5,12 +5,13 @@ using Config;
 using QUtility;
 using UnityEngine.Events;
 using UnityEngine.UIElements;
+using System.Diagnostics;
 
 namespace QModel
 {
-    public class CardPileData:AbstractModel
+    public class CardPileData : AbstractModel
     {
-        
+
         //model
         public List<BaseCard> deck = new List<BaseCard>();                         //卡组 
 
@@ -23,20 +24,24 @@ namespace QModel
         private List<BaseCard> discardPile = new List<BaseCard>();                  // 弃牌堆  
 
         private List<BaseCard> cemeteryPile = new List<BaseCard>();                 //墓地堆
-        
-        protected override void OnInit(){}
+
+        protected override void OnInit() { }
 
         #region 卡组初始化
 
         public void OnInitDeck(List<BaseCard> cards)
         {
-            if(cards==null) return;
+            if (cards == null)
+            {
+                LogTool.Log("cards is null");
+                return;
+            }
             this.deck = cards;
         }
-        
+
 
         #endregion
-        
+
         #region 手牌
         public void RemoveCurCardForCardsInHand(BaseCard card)
         {
@@ -49,14 +54,14 @@ namespace QModel
         }
         public int GetCardsInHandLength()
         {
-            return cardsInHand.Count; 
+            return cardsInHand.Count;
         }
         #endregion
-        
+
         #region 抽牌堆
         public void AddDrawPile(BaseCard card)
-        { 
-            if(card==null) return;
+        {
+            if (card == null) return;
             this.drawPile.Add(card);
         }
 
@@ -80,30 +85,30 @@ namespace QModel
         #endregion
 
         #region 弃牌堆
-        
+
         /// <summary>
         /// 丢弃所有手牌
         /// </summary>
         public void DisCardHandAll()
         {
-             LogTool.Log("遍历手中的每一张卡牌，并将其置入弃牌堆  ");
-             // 遍历手中的每一张卡牌，并将其置入弃牌堆  
-             foreach (BaseCard card in this.cardsInHand)
-             {
-                 AddDiscardPile(card);
-             }
-            
-             this.ClearDrawPile();
+            LogTool.Log("遍历手中的每一张卡牌，并将其置入弃牌堆  ");
+            // 遍历手中的每一张卡牌，并将其置入弃牌堆  
+            foreach (BaseCard card in this.cardsInHand)
+            {
+                AddDiscardPile(card);
+            }
 
-           // PushPoolAll();
+            this.ClearDrawPile();
+
+            // PushPoolAll();
         }
-        
+
         /// <summary>
         /// 用于将一张卡片放入弃牌堆 
         /// </summary>
         public void AddDiscardPile(BaseCard card)
-        { 
-            if(card==null) return;
+        {
+            if (card == null) return;
             this.discardPile.Add(card);
         }
         public int GetDrawPileCnt()
@@ -115,7 +120,7 @@ namespace QModel
         {
             this.discardPile.Clear();
         }
-        
+
 
         #endregion
 

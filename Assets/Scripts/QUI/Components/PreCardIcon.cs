@@ -14,9 +14,11 @@ using UnityEngine.EventSystems;
 
 namespace QUI
 {
-	public partial class PreCardIcon : UIComponent,IController,IPoolable,IPoolType, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler, IDragHandler, IEndDragHandler,IBeginDragHandler
+	public partial class PreCardIcon : UIComponent, IController, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler, IDragHandler, IEndDragHandler, IBeginDragHandler
 	{
 		public FightCardManager fightCardManager;
+
+		private UIPoolManager uiPoolManager;
 		public BaseCard curCard;
 		private CanvasGroup canvasGroup;
 		private int index;
@@ -24,92 +26,97 @@ namespace QUI
 		{
 			fightCardManager = this.GetSystem<FightCardManager>();
 			canvasGroup = GetComponent<CanvasGroup>();
+			uiPoolManager = this.GetSystem<UIPoolManager>();
 		}
 		protected override void OnBeforeDestroy()
 		{
 		}
-
+		private void OnDisable()
+		{
+			uiPoolManager.PushObj(this);
+		}
 		public void RefreshCard(BaseCard card)
 		{
 			if (card == null)
 			{
+				this.curCard = null;
 				this.gameObject.SetActive(false);
-				
+
 				return;
 			}
-			
-			this.curCard=card;
+
+			this.curCard = card;
 			this.CardDescription.text = this.curCard.CardDescription;
 			// this.Background.sprite
 			this.CardNameText.text = this.curCard.CardTitle;
 			this.CardCost.text = this.curCard.CardCost.ToString();
 			this.Icon.sprite = this.curCard.CardIcon;
 		}
-		
-		#region ÊÂ¼þ½Ó¿ÚÊµÏÖ
+
+		#region ï¿½Â¼ï¿½ï¿½Ó¿ï¿½Êµï¿½ï¿½
 
 		public void OnPointerClick(PointerEventData eventData)
 		{
-			if(this.curCard==null) return;
-			// ¸æÖªÕ½¶·³¡¾°¹ÜÀíÆ÷¸Ã¿¨ÅÆÒÑ±»Ñ¡Ôñ
+			if (this.curCard == null) return;
+			// ï¿½ï¿½ÖªÕ½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã¿ï¿½ï¿½ï¿½ï¿½Ñ±ï¿½Ñ¡ï¿½ï¿½
 			//battleSceneManager.selectedCard = this;
-			//Debug.Log("Ñ¡Ôñ¸Ã¿¨ÅÆµÄ·½·¨");
+			//Debug.Log("Ñ¡ï¿½ï¿½Ã¿ï¿½ï¿½ÆµÄ·ï¿½ï¿½ï¿½");
 			transform.DOScale(1.5f, 0.5f);
 		}
 
 		public void OnPointerEnter(PointerEventData eventData)
 		{
-			
-			if(this.curCard==null) return;
+
+			if (this.curCard == null) return;
 			transform.DOScale(1.5f, 0.25f);
 			index = transform.GetSiblingIndex();
 			transform.SetAsLastSibling();
- 
+
 			// transform.Find("bg").GetComponent<Image>().material.SetColor("_lineColor",Color.yellow);
 			// transform.Find("bg").GetComponent<Image>().material.SetFloat("_lineWidth",10);
 		}
 
 		public void OnPointerExit(PointerEventData eventData)
-		{	
-			if(this.curCard==null) return;
+		{
+			if (this.curCard == null) return;
 			transform.DOScale(1.0f, 0.25f);
 			transform.SetSiblingIndex(index);
- 
+
 			// transform.Find("bg").GetComponent<Image>().material.SetColor("_lineColor", Color.black);
 			// transform.Find("bg").GetComponent<Image>().material.SetFloat("_lineWidth", 1);
 
 		}
-		Vector2 initPos;//ÍÏ×§¿ªÊ¼Ê±¼ÇÂ¼¿¨ÅÆµÄÎ»ÖÃ
-		//¿ªÊ¼ÍÏ×§
+		Vector2 initPos;//ï¿½ï¿½×§ï¿½ï¿½Ê¼Ê±ï¿½ï¿½Â¼ï¿½ï¿½ï¿½Æµï¿½Î»ï¿½ï¿½
+						//ï¿½ï¿½Ê¼ï¿½ï¿½×§
 		public virtual void OnBeginDrag(PointerEventData eventData)
 		{
-			initPos = transform.GetComponent<RectTransform>().anchoredPosition; 
-			//canvasGroup.alpha = 0.5f;//ÍÏ×§µÃ¹ý³ÌÖÐ½µµÍÍ¸Ã÷¶È
+			initPos = transform.GetComponent<RectTransform>().anchoredPosition;
+			//canvasGroup.alpha = 0.5f;//ï¿½ï¿½×§ï¿½Ã¹ï¿½ï¿½ï¿½ï¿½Ð½ï¿½ï¿½ï¿½Í¸ï¿½ï¿½ï¿½ï¿½
 			canvasGroup.blocksRaycasts = false;
 
 		}
-		
+
 		public void OnDrag(PointerEventData eventData)
 		{
 			transform.position = Input.mousePosition;
 		}
-		
+
 		public void OnEndDrag(PointerEventData eventData)
 		{
 			//canvasGroup.alpha = 1f;
-			canvasGroup.blocksRaycasts = true;//¿ÉÒÔ¼ÌÐøÍÏ×§
+			canvasGroup.blocksRaycasts = true;//ï¿½ï¿½ï¿½Ô¼ï¿½ï¿½ï¿½ï¿½ï¿½×§
 			transform.GetComponent<RectTransform>().anchoredPosition = initPos;
 			transform.SetSiblingIndex(index);
-			// Debug.Log("µ±Êó±ê½áÊøÍÏ×§¿¨ÅÆÊ±´¥·¢µÄ·½·¨ Õâ±ßµ÷µ½FightCardManager");
+			// Debug.Log("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×§ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½Ä·ï¿½ï¿½ï¿½ ï¿½ï¿½ßµï¿½ï¿½ï¿½FightCardManager");
 			this.fightCardManager.PlayCard(this.curCard, () =>
 			{
 				this.gameObject.SetActive(false);
 			});
 		}
-		
-		
+
+
 		#endregion
-		// Ö¸¶¨¼Ü¹¹
+		// Ö¸ï¿½ï¿½ï¿½Ü¹ï¿½
 		public IArchitecture GetArchitecture()
 		{
 			return CounterApp.Interface;
