@@ -17,44 +17,44 @@ namespace Config.Card
 
 
 
-        #region ï¿½ï¿½ï¿½ï¿½
+        #region „1¤7„1¤7„1¤7„1¤7
 
-        [Header("ï¿½ï¿½ï¿½ï¿½")]
-        //ï¿½ï¿½ï¿½ï¿½id
+        [Header("„1¤7„1¤7„1¤7„1¤7")]
+        //„1¤7„1¤7„1¤7„1¤7id
         public int cardId;
 
-        // ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        // „1¤70¢9„1¤7„1¤7„1¤7„1¤7„1¤7„1¤7„1¤7
         public bool isUpgraded;
 
         #endregion
 
 
 
-        #region ï¿½ï¿½ï¿½ï¿½Ð§ï¿½ï¿½ï¿½á¹¹ï¿½ï¿½
-        // ï¿½ï¿½ï¿½Æ·ï¿½ï¿½Ãºï¿½Ð§ï¿½ï¿½ï¿½Ä½á¹¹ï¿½ï¿½
+        #region „1¤7„1¤7„1¤7„1¤7§¹„1¤7„1¤7„1¤75ú5„1¤7„1¤7
+        // „1¤7„1¤7„1¤703„1¤7„1¤7¨²„1¤7§¹„1¤7„1¤7„1¤70‘55ú5„1¤7„1¤7
         [System.Serializable]
         public struct ScardAmount
         {
-            public int baseAmount; // ï¿½ï¿½ï¿½ï¿½Öµ
-            public int upgradedAmount; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµ
+            public int baseAmount; // „1¤7„1¤7„1¤7„1¤70ö5
+            public int upgradedAmount; // „1¤7„1¤7„1¤7„1¤7„1¤7„1¤7„1¤70ö5
         }
 
-        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä½á¹¹ï¿½ï¿½
+        // „1¤7„1¤7„1¤7„1¤7„1¤7„1¤7„1¤7„1¤7„1¤70‘55ú5„1¤7„1¤7
         [System.Serializable]
         public struct ScardDescription
         {
-            public string baseAmount; // ï¿½ï¿½ï¿½ï¿½Öµ
-            public string upgradedAmount; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµ
+            public string baseAmount; // „1¤7„1¤7„1¤7„1¤70ö5
+            public string upgradedAmount; // „1¤7„1¤7„1¤7„1¤7„1¤7„1¤7„1¤70ö5
         }
         #endregion
 
 
 
-        #region ï¿½ï¿½ï¿½ï¿½UI
-        [Header("ï¿½ï¿½ï¿½ï¿½UI")]
+        #region „1¤7„1¤7„1¤7„1¤7UI
+        [Header("„1¤7„1¤7„1¤7„1¤7UI")]
 
 
-        // ï¿½ï¿½ï¿½Æ±ï¿½ï¿½ï¿½
+        // „1¤7„1¤7„1¤70œ7„1¤7„1¤7„1¤7
         [SerializeField]
         private string cardTitle;
         public string CardTitle
@@ -65,7 +65,7 @@ namespace Config.Card
 
 
 
-        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        // „1¤7„1¤7„1¤7„1¤7„1¤7„1¤7„1¤7„1¤7
         [SerializeField]
         private ScardDescription cardDescription;
 
@@ -81,7 +81,7 @@ namespace Config.Card
         }
 
 
-        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        // „1¤7„1¤7„1¤7„1¤7„1¤7„1¤7„1¤7
         [SerializeField]
         private CardColor cardColor;
         public CardColor CardColor
@@ -92,7 +92,7 @@ namespace Config.Card
 
 
         [SerializeField]
-        // ï¿½ï¿½ï¿½ï¿½Í¼ï¿½ï¿½
+        // „1¤7„1¤7„1¤7„1¤70É0„1¤7„1¤7
         private Sprite cardIcon;
         public Sprite CardIcon
         {
@@ -102,11 +102,11 @@ namespace Config.Card
 
 
 
-        #region ï¿½ï¿½ï¿½Ú»ï¿½ï¿½ï¿½ï¿½ï¿½Öµ
+        #region „1¤7„1¤7„1¤71’7„1¤7„1¤7„1¤7„1¤7„1¤70ö5
 
-        [Header("ï¿½ï¿½ï¿½Ú»ï¿½ï¿½ï¿½ï¿½ï¿½Öµ")]
+        [Header("„1¤7„1¤7„1¤71’7„1¤7„1¤7„1¤7„1¤7„1¤70ö5")]
 
-        // ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½
+        // „1¤7„1¤7„1¤703„1¤7„1¤7„1¤7
         [SerializeField]
         private ScardAmount cardCost;
         public int CardCost
@@ -119,7 +119,7 @@ namespace Config.Card
                     return cardCost.upgradedAmount;
             }
         }
-        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµ
+        // „1¤7„1¤7„1¤7„1¤7„1¤7„1¤70ö5
         [SerializeField]
         private ScardAmount cardEffect;
         public int CardEffect
@@ -137,7 +137,7 @@ namespace Config.Card
 
 
 
-        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        // „1¤7„1¤7„1¤7„1¤7„1¤7„1¤7„1¤7„1¤7
         [SerializeField]
         private CardType type;
         public CardType Type
@@ -147,7 +147,7 @@ namespace Config.Card
 
 
 
-        // ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        // „1¤7„1¤7„1¤7„1¤70‘7„1¤7„1¤7„1¤7„1¤7„1¤7„1¤7
         [SerializeField]
         private CardTargetType target;
         public CardTargetType Target
@@ -159,9 +159,9 @@ namespace Config.Card
 
 
 
-        #region ï¿½ï¿½ï¿½ï¿½Buff
-        [Header("ï¿½ï¿½ï¿½ï¿½Buff")]
-        //ï¿½Ç·ï¿½Ê©ï¿½ï¿½buff
+        #region „1¤7„1¤7„1¤7„1¤7Buff
+        [Header("„1¤7„1¤7„1¤7„1¤7Buff")]
+        //„1¤70¢9„1¤70´4„1¤7„1¤7buff
 
 
         [SerializeField]
@@ -171,7 +171,7 @@ namespace Config.Card
             get { return isBuffs; }
         }
 
-        //Ê©ï¿½Óµï¿½buff
+        //0´4„1¤70ã3„1¤7buff
         [SerializeField]
         private int cardBuffId;
         public int CardBuffId
@@ -179,7 +179,7 @@ namespace Config.Card
             get { return cardBuffId; }
         }
 
-        // ï¿½ï¿½ï¿½ï¿½buffï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµ
+        // „1¤7„1¤7„1¤7„1¤7buff„1¤7„1¤7„1¤7„1¤7„1¤7„1¤70ö5
         [SerializeField]
         private ScardAmount buffAmount;
         public int BuffAmount
@@ -194,7 +194,7 @@ namespace Config.Card
         }
 
 
-        // ï¿½ï¿½ï¿½ï¿½buffÄ¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        // „1¤7„1¤7„1¤7„1¤7buff0‘7„1¤7„1¤7„1¤7„1¤7„1¤7„1¤7
         [SerializeField]
         private CardTargetType targetBuff;
         public CardTargetType TargetBuff
