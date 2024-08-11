@@ -10,6 +10,7 @@ namespace NoSLoofah.BuffSystem
     /// </summary>
     public class BuffHandler : MonoBehaviour, IBuffHandler
     {
+        public GameObject BuffParent;
         private List<Buff> buffs = new List<Buff>();
         private Action onAddBuff;
         private Action onRemoveBuff;

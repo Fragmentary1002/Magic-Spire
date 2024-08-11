@@ -8,57 +8,58 @@ using UnityEngine.Events;
 
 namespace QSystem
 {
-    public class FightCardManager:AbstractSystem
+    public class FightCardManager : AbstractSystem
     {
         private CardPileData _cardPileData;
         private FighterData _fighterData;
-        
-        
+
+
         protected override void OnInit()
         {
             _cardPileData = this.GetModel<CardPileData>();
             _fighterData = this.GetModel<FighterData>();
         }
 
-        public void PlayCard(BaseCard card,UnityAction callBack)
+        public void PlayCard(BaseCard card, UnityAction callBack)
         {
 
             if (card == null)
             {
                 LogTool.Log("找不到Card数据");
-                return ;
+                return;
             }
 
 
             if (_fighterData.GetPlayer().curEnergy < card.CardCost)
             {
                 LogTool.Log("你的能量不够");
-                return ;
+                return;
             }
 
             // if (cardUI.card.cardType != CardTj.CardType.Attack && enemies[0].GetComponent<Fighter>().enrage.buffValue > 0)
             //   enemies[0].GetComponent<Fighter>().AddBuff(Buff.Type.strength, enemies[0].GetComponent<Fighter>().enrage.buffValue);
 
             try
-            {   
+            {
                 // 执行卡片的动作。  
                 PerformPlayerAction(card);
                 callBack?.Invoke();
                 _fighterData.GetPlayer().curEnergy -= card.CardCost;
                 StringEventSystem.Global.Send(EventID.EnergyUpdate);
                 // 从手牌列表中移除该卡片。
+                // card.Apply();
                 _cardPileData.RemoveCurCardForCardsInHand(card);
                 _cardPileData.AddDiscardPile(card);
                 StringEventSystem.Global.Send(EventID.CardsUpdate);
-                
+
             }
             catch
             {
-                return ;
+                return;
             }
 
-   
-            return ;
+
+            return;
 
         }
 
@@ -66,12 +67,12 @@ namespace QSystem
 
         private void PerformPlayerAction(BaseCard card)
         {
-            if(card==null) return;
+            if (card == null) return;
             LogTool.Log("执行卡片的动作");
 
             Fighter player = _fighterData.GetPlayer();
             Fighter enemy = _fighterData.GetEnemy(1);
-            
+
             switch (card.Type)
             {
                 case CardType.Attack:
@@ -84,12 +85,12 @@ namespace QSystem
                     break;
                 case CardType.Power:
                     //能力牌玩家加buff
-                   
+
                     break;
             }
         }
-        
-        
+
+
         /// <summary>
         /// 抽牌操作 默认为抽5张
         /// </summary>
@@ -110,7 +111,7 @@ namespace QSystem
                 {
                     _cardPileData.ShuffleCards(); // 则执行洗牌操作，重新填充抽牌堆
                 }
-                
+
                 //Debug.Log($"抽牌操作  第{i}张 抽到了 id={ drawPile[0].cardId}的卡 ");
 
                 _cardPileData.DrawCard();
@@ -122,9 +123,9 @@ namespace QSystem
             }
         }
 
-        
-      
-       
+
+
+
 
     }
 }

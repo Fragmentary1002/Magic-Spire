@@ -22,6 +22,8 @@ namespace QModel
         public Sprite icon;
         public int curEnergy;
         public int maxEnergy;
+
+        public int ATK = 0;
         // 当前阻挡值，默认为0
         [Range(0, 999)]
         public int currentBlock = 0;
@@ -104,6 +106,15 @@ namespace QModel
         }
 
         #endregion
+
+        #region Buff
+        public void BuffIncreaseAttack(int num)
+        {
+            ATK += num;
+        }
+        #endregion
+
+
     }
 
 }

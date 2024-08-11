@@ -168,6 +168,7 @@ GameObject:
   - component: {fileID: 6906579243204866604}
   - component: {fileID: 5780476654734089485}
   - component: {fileID: 7207860179345651037}
+  - component: {fileID: 4000609780815020412}
   m_Layer: 6
   m_Name: PreBaseEnemyUI
   m_TagString: Untagged
@@ -274,6 +275,18 @@ MonoBehaviour:
   CustomComponentName: PreBaseEnemyUI
   CustomComment: 
   mComponentName: UnityEngine.UI.Image
+--- !u!114 &4000609780815020412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3966966964440119403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9415acde80bef874eabd30cb8f4cc840, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3966966964720921343
 GameObject:
   m_ObjectHideFlags: 0

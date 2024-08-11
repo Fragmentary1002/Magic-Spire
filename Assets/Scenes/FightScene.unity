@@ -745,6 +745,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2145233307}
   - component: {fileID: 2145233309}
+  - component: {fileID: 2145233311}
+  - component: {fileID: 2145233310}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -786,6 +788,32 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f43927ab484474a4bbb83fa7ffa36995, type: 2}
   PanelName: FightMainWnd
   Level: 0
+--- !u!114 &2145233310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2145233306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7299e19220fb2064f994b058992a2402, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagData: {fileID: 0}
+--- !u!114 &2145233311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2145233306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d010badb5bfaafb4aa9cd2292ae11e85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collection: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
