@@ -1,5 +1,7 @@
 using NoSLoofah.BuffSystem;
 using UnityEngine;
+using QUtility;
+
 
 namespace Config.Monster
 {
@@ -8,19 +10,19 @@ namespace Config.Monster
     public class EnemyAction : ScriptableObject
     {
 
-        public EnemyActionType type;  //意图类型
+        public EnemyActionType type;  //锟斤拷图锟斤拷锟斤拷
 
-        public int amount;      //攻击防御数值
+        public int amount;      //锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷值
 
         public bool isGetBuff;
 
-        public int buffAmount;  //施加或给自身buff数值
+        public int buffAmount;  //施锟接伙拷锟斤拷锟斤拷锟絙uff锟斤拷值
 
-        public int BuffId;//施加或给自身buff类型
+        public int BuffId;//施锟接伙拷锟斤拷锟斤拷锟絙uff锟斤拷锟斤拷
 
-        public int chance;  // 表示某个意图或动作触发的几率。  
+        public int chance;  // 锟斤拷示某锟斤拷锟斤拷图锟斤拷锟斤拷锟斤拷锟斤拷锟侥硷拷锟绞★拷  
 
-        public Sprite icon;     // 显示该EnemyAction的图标。 
+        public Sprite icon;     // 锟斤拷示锟斤拷EnemyAction锟斤拷图锟疥。 
 
     }
 
