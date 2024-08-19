@@ -1,6 +1,7 @@
 ﻿using QFramework;
 using System.Collections;
 using System.Collections.Generic;
+using Config;
 using Config.Character;
 using Config.Monster;
 using NoSLoofah.BuffSystem;
@@ -22,8 +23,8 @@ namespace QModel
         public Sprite icon;
         public int curEnergy;
         public int maxEnergy;
-
         public int ATK = 0;
+        
         // 当前阻挡值，默认为0
         [Range(0, 999)]
         public int currentBlock = 0;
@@ -88,9 +89,19 @@ namespace QModel
 
             // 减少当前生命值，并更新生命值UI
             this.curHp = amount;
+            if (fighterId == 0)
+            {
+                StringEventSystem.Global.Send(EventID.PlayerHurt);
+            }
+            else
+            {
+                StringEventSystem.Global.Send(EventID.EnemyHurt);
+            }
 
             if (this.curHp < 0) { return false; }
 
+            
+            
             return true;
         }
 

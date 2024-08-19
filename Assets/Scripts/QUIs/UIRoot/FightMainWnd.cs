@@ -75,7 +75,20 @@ namespace QUI
 
 		private void Register()
 		{
-			StringEventSystem.Global.Register(EventID.EnergyUpdate, () => UpdateEnergy()); ;
+			StringEventSystem.Global.Register(EventID.EnergyUpdate, () =>
+			{
+				EnergyUpdate();
+			});
+			StringEventSystem.Global.Register(EventID.PlayerHurt, () =>
+			{
+				PlayerHurt();
+
+			}).UnRegisterWhenGameObjectDestroyed(gameObject);
+			
+			StringEventSystem.Global.Register(EventID.EnemyHurt, () =>
+			{
+				EnemyHurt();
+			}).UnRegisterWhenGameObjectDestroyed(gameObject);;
 		}
 
 		private void InitMData()
@@ -86,13 +99,24 @@ namespace QUI
 
 		}
 
-		private void UpdateEnergy()
+		private void EnergyUpdate()
 		{
 			this.txtEnergyCnt.text = this.mData.fighterData.GetPlayer().curEnergy.ToString();
 		}
 
+		private void PlayerHurt()
+		{
+			this.PreBasePlayerUI.OnHurt(this.mData.fighterData.GetPlayer());
+		}
 
-
+		private void EnemyHurt()
+		{
+			for (int i = 0; i < this.mData.PreBaseEnemiesUI.Count; i++)
+			{
+				this.mData.PreBaseEnemiesUI[i].OnHurt(this.mData.fighterData.GetEnemy(i));
+			}
+		}
+		
 		protected override void OnOpen(IUIData uiData = null)
 		{
 			LoadData();
@@ -118,11 +142,12 @@ namespace QUI
 			txtDrawPileCnt.text = this.mData.cardPileData.LengthOfDrawPile().ToString();
 			txtDiscardPileCnt.text = this.mData.cardPileData.LengthOfDiscardPile().ToString();
 			txtEnergyCnt.text = this.mData.fighterData.GetPlayer().curEnergy.ToString();
-
-			this.PreBasePlayerUI.gameObject.GetComponent<Image>().sprite = this.mData.fighterData.GetPlayer().icon;
+			
 			// PlayerParent
+			this.PreBasePlayerUI.gameObject.GetComponent<Image>().sprite = this.mData.fighterData.GetPlayer().icon;
+			this.mData.fighterData.PlayerObj = this.PreBasePlayerUI.gameObject;
 			// EnemyParent	
-
+			
 			// Cards
 
 			for (int i = 0; i < this.mData.cardPileData.deck.Count; i++)
@@ -137,6 +162,9 @@ namespace QUI
 			// 	print(i);
 			// 	this.mData.uIPoolManager.GetObj(this.mData.cardPileData.CardsInHand[i], this.Cards.transform);
 			// }
+
+			PlayerHurt();
+			EnemyHurt();
 
 		}
 

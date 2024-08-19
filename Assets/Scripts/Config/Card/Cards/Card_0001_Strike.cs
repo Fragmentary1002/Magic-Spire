@@ -1,6 +1,7 @@
 ﻿using NoSLoofah.BuffSystem;
 using UnityEngine;
 using System;
+using QModel;
 using QUtility;
 namespace Config.Card.Cards
 {
@@ -9,6 +10,7 @@ namespace Config.Card.Cards
         public override void Apply(GameObject target, GameObject caster)
         {
             base.Apply(target, caster);
+            // c.DoTakeDamageAndIsEndFight(this.CardEffect);
         }
 
     }

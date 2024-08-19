@@ -19,7 +19,7 @@ namespace QSystem
             _cardPileData = this.GetModel<CardPileData>();
             _fighterData = this.GetModel<FighterData>();
         }
-
+        
         public void PlayCard(BaseCard card, UnityAction callBack)
         {
 
@@ -42,24 +42,19 @@ namespace QSystem
             try
             {
                 // 执行卡片的动作。  
-                PerformPlayerAction(card);
                 callBack?.Invoke();
                 _fighterData.GetPlayer().curEnergy -= card.CardCost;
                 StringEventSystem.Global.Send(EventID.EnergyUpdate);
                 // 从手牌列表中移除该卡片。
-                // card.Apply();
+                card.Apply(this._fighterData.PlayerObj,_fighterData.EnemyObj);
                 _cardPileData.RemoveCurCardForCardsInHand(card);
                 _cardPileData.AddDiscardPile(card);
                 StringEventSystem.Global.Send(EventID.CardsUpdate);
-
             }
             catch
             {
                 return;
             }
-
-
-            return;
 
         }
 

@@ -39,7 +39,7 @@ public class FanCardLayout : IUtility
     private float CalculateRadius(int len)
     {
         var t = baseRadius * len / maxCardCount;
-        LogTool.Log(t.ToString());
+        //LogTool.Log(t.ToString());
 
         // 动态)调整半径长度
         return baseRadius * len / maxCardCount;

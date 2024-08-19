@@ -9,14 +9,17 @@ using UnityEngine;
 using UnityEngine.UI;
 using QFramework;
 using QModel;
+using UnityEngine.EventSystems;
 
 namespace QUI
 {
-	public partial class PreBaseEnemyUI : UIComponent
+	public partial class PreBaseEnemyUI : UIComponent,IPointerEnterHandler, IPointerExitHandler
 	{
+		private FighterData fighterData;
 		private void Awake()
 		{
 			Register();
+			OutLine.enabled = false;
 		}
 
 		protected override void OnBeforeDestroy()
@@ -24,13 +27,24 @@ namespace QUI
 		}
 		private void Register()
 		{
-			StringEventSystem.Global.Register<Fighter>(EventID.Hurt,(f)=>OnHurt(f)).UnRegisterWhenGameObjectDestroyed(gameObject);;
 		}
 
-		private Fighter OnHurt(Fighter f)
+		public Fighter OnHurt(Fighter f)
 		{
 			PreHealthBarUI.RefreshBar(f);
 			return f;
+		}
+		
+		public void OnPointerEnter(PointerEventData eventData)
+		{
+			OutLine.enabled = true;
+			StringEventSystem.Global.Send(EventID.SetCurEnemy,this.gameObject);
+		}
+
+		public void OnPointerExit(PointerEventData eventData)
+		{
+			OutLine.enabled = false;
+			StringEventSystem.Global.Send(EventID.SetCurEnemy,this.gameObject);
 		}
 	}
 }

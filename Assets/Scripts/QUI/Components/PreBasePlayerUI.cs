@@ -24,10 +24,10 @@ namespace QUI
 		}
 		private void Register()
 		{
-			StringEventSystem.Global.Register<Fighter>(EventID.Hurt,(f)=>OnHurt(f)).UnRegisterWhenGameObjectDestroyed(gameObject);;
+			
 		}
 
-		private void OnHurt(Fighter f)
+		public void OnHurt(Fighter f)
 		{
 			PreHealthBarUI.RefreshBar(f);
 		}

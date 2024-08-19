@@ -1072,16 +1072,6 @@ MonoBehaviour:
   PreBaseEnemyUI1: {fileID: 8733261011251789835}
   PreBaseEnemyUI2: {fileID: 8803641698450587956}
   Cards: {fileID: 7990998847256947295}
-  PreCardIcon: {fileID: 0}
-  PreCardIcon1: {fileID: 0}
-  PreCardIcon2: {fileID: 0}
-  PreCardIcon3: {fileID: 0}
-  PreCardIcon4: {fileID: 0}
-  PreCardIcon5: {fileID: 0}
-  PreCardIcon6: {fileID: 0}
-  PreCardIcon7: {fileID: 0}
-  PreCardIcon8: {fileID: 0}
-  PreCardIcon9: {fileID: 0}
   btnDiscardPile: {fileID: 1471578835419954858}
   txtDiscardPileCnt: {fileID: 7990998847992770399}
   btnDrawPile: {fileID: 5847488941335897064}
@@ -2010,19 +2000,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5126827670050083134, guid: 0e94f9d4aa0f2364ea05c61a23c8024b, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5126827670050083134, guid: 0e94f9d4aa0f2364ea05c61a23c8024b, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5126827670050083134, guid: 0e94f9d4aa0f2364ea05c61a23c8024b, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 123.0638
       objectReference: {fileID: 0}
     - target: {fileID: 5126827670050083134, guid: 0e94f9d4aa0f2364ea05c61a23c8024b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -22.69335
       objectReference: {fileID: 0}
     - target: {fileID: 8576791974791014312, guid: 0e94f9d4aa0f2364ea05c61a23c8024b, type: 3}
       propertyPath: m_AnchorMax.x
@@ -2127,6 +2117,7 @@ MonoBehaviour:
   IntentIcon: {fileID: 1757054909233772040}
   IntentAmountText: {fileID: 6169902341335694977}
   EnemyIcon: {fileID: 2999319119864376795}
+  OutLine: {fileID: 8782586337812510927}
   PreHealthBarUI: {fileID: 2714093944812365706}
 --- !u!224 &2999319119591014230 stripped
 RectTransform:
@@ -2180,6 +2171,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8782586337812510927 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7453672936816820205, guid: 0e94f9d4aa0f2364ea05c61a23c8024b, type: 3}
+  m_PrefabInstance: {fileID: 2203042754591442722}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &2501403784290058181
@@ -2276,19 +2278,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5126827670050083134, guid: 0e94f9d4aa0f2364ea05c61a23c8024b, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5126827670050083134, guid: 0e94f9d4aa0f2364ea05c61a23c8024b, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5126827670050083134, guid: 0e94f9d4aa0f2364ea05c61a23c8024b, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 123.0638
       objectReference: {fileID: 0}
     - target: {fileID: 5126827670050083134, guid: 0e94f9d4aa0f2364ea05c61a23c8024b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -22.69335
       objectReference: {fileID: 0}
     - target: {fileID: 8576791974791014312, guid: 0e94f9d4aa0f2364ea05c61a23c8024b, type: 3}
       propertyPath: m_AnchorMax.x
@@ -2345,6 +2347,7 @@ MonoBehaviour:
   IntentIcon: {fileID: 2613867802430983919}
   IntentAmountText: {fileID: 7618937966788658790}
   EnemyIcon: {fileID: 1566049884556711228}
+  OutLine: {fileID: 5027707641741541416}
   PreHealthBarUI: {fileID: 5706246702589172129}
 --- !u!224 &1566049884283635633 stripped
 RectTransform:
@@ -2419,6 +2422,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5027707641741541416 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7453672936816820205, guid: 0e94f9d4aa0f2364ea05c61a23c8024b, type: 3}
+  m_PrefabInstance: {fileID: 2501403784290058181}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &6266409446150077462 stripped
@@ -2781,19 +2795,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5126827670050083134, guid: 0e94f9d4aa0f2364ea05c61a23c8024b, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5126827670050083134, guid: 0e94f9d4aa0f2364ea05c61a23c8024b, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5126827670050083134, guid: 0e94f9d4aa0f2364ea05c61a23c8024b, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 123.0638
       objectReference: {fileID: 0}
     - target: {fileID: 5126827670050083134, guid: 0e94f9d4aa0f2364ea05c61a23c8024b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -22.69335
       objectReference: {fileID: 0}
     - target: {fileID: 8576791974791014312, guid: 0e94f9d4aa0f2364ea05c61a23c8024b, type: 3}
       propertyPath: m_AnchorMax.x
@@ -2844,6 +2858,7 @@ MonoBehaviour:
   IntentIcon: {fileID: 4288244495174507633}
   IntentAmountText: {fileID: 8538634651901662456}
   EnemyIcon: {fileID: 756340157561898914}
+  OutLine: {fileID: 6485944572384498358}
   PreHealthBarUI: {fileID: -120626447041371317}
 --- !u!114 &756340157561898914 stripped
 MonoBehaviour:
@@ -2935,6 +2950,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6485944572384498358 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7453672936816820205, guid: 0e94f9d4aa0f2364ea05c61a23c8024b, type: 3}
+  m_PrefabInstance: {fileID: 4427724743897083227}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!95 &7109891924029011061 stripped

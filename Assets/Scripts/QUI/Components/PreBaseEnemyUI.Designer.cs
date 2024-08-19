@@ -15,8 +15,9 @@ namespace QUI
 		[SerializeField] public UnityEngine.UI.Image IntentIcon;
 		[SerializeField] public TMPro.TextMeshProUGUI IntentAmountText;
 		[SerializeField] public UnityEngine.UI.Image EnemyIcon;
+		[SerializeField] public Outline OutLine;
 		[SerializeField] public PreHealthBarUI PreHealthBarUI;
-
+		
 		public void Clear()
 		{
 			BuffParent = null;
@@ -24,6 +25,7 @@ namespace QUI
 			IntentIcon = null;
 			IntentAmountText = null;
 			EnemyIcon = null;
+			OutLine = null;
 			PreHealthBarUI = null;
 		}
 

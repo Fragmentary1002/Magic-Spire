@@ -53,14 +53,12 @@ namespace QUI
 			this.Icon.sprite = this.curCard.CardIcon;
 		}
 
-		#region �¼��ӿ�ʵ��
+		#region 点击事件
 
 		public void OnPointerClick(PointerEventData eventData)
 		{
 			if (this.curCard == null) return;
-			// ��֪ս�������������ÿ����ѱ�ѡ��
 			//battleSceneManager.selectedCard = this;
-			//Debug.Log("ѡ��ÿ��Ƶķ���");
 			transform.DOScale(1.5f, 0.5f);
 		}
 
@@ -86,12 +84,11 @@ namespace QUI
 			// transform.Find("bg").GetComponent<Image>().material.SetFloat("_lineWidth", 1);
 
 		}
-		Vector2 initPos;//��ק��ʼʱ��¼���Ƶ�λ��
-						//��ʼ��ק
+		Vector2 initPos;
 		public virtual void OnBeginDrag(PointerEventData eventData)
 		{
 			initPos = transform.GetComponent<RectTransform>().anchoredPosition;
-			//canvasGroup.alpha = 0.5f;//��ק�ù����н���͸����
+			//canvasGroup.alpha = 0.5f;
 			canvasGroup.blocksRaycasts = false;
 
 		}
@@ -104,10 +101,10 @@ namespace QUI
 		public void OnEndDrag(PointerEventData eventData)
 		{
 			//canvasGroup.alpha = 1f;
-			canvasGroup.blocksRaycasts = true;//���Լ�����ק
+			canvasGroup.blocksRaycasts = true;
 			transform.GetComponent<RectTransform>().anchoredPosition = initPos;
 			transform.SetSiblingIndex(index);
-			// Debug.Log("����������ק����ʱ�����ķ��� ��ߵ���FightCardManager");
+	
 			this.fightCardManager.PlayCard(this.curCard, () =>
 			{
 				this.gameObject.SetActive(false);
@@ -116,7 +113,6 @@ namespace QUI
 
 
 		#endregion
-		// ָ���ܹ�
 		public IArchitecture GetArchitecture()
 		{
 			return CounterApp.Interface;
